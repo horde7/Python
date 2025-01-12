@@ -1,0 +1,48 @@
+import pandas as pd
+import subprocess
+
+#CSV_FILES_PATH = "RawBrokerData\\"
+CSV_FILES_PATH = "Data\\"
+
+dirParam = CSV_FILES_PATH + "*.csv"
+
+# Spustí příkaz a získá výstup
+result = subprocess.run(['dir', dirParam, '/b'], capture_output=True, text=True, shell=True)
+
+# Rozdělí výstup na jednotlivé řádky a uloží je do pole
+csv_files = result.stdout.splitlines()
+
+# Vytiskne seznam souborů
+print(csv_files)
+
+df_list = []
+df_total = pd.DataFrame()
+for file in csv_files:
+    df = pd.read_csv(CSV_FILES_PATH +file)
+    df["_ACCNT"] = file.split('_')[0]
+    df_list.append(df)
+df_total = pd.concat(df_list, ignore_index=True)
+df_total = df_total.filter(items=["_ACCNT","DATE", "SYMBOL", "QUANTITY", "PRICE" ])
+print (df_total.sort_values(by="DATE", ascending=False))
+#df_total = df_total.
+
+#df_total = pd.concat([pd.read_csv(CSV_FILES_PATH +file) for file in csv_files ], ignore_index=True)
+
+# df_csv_append = pd.DataFrame()
+# for file in csv_files:
+#     df = pd.read_csv(CSV_FILES_PATH + file)
+#     df_csv_append = df_csv_append.append(df, ignore_index=True)
+
+print(df_total)
+
+def ln(): 
+    print ("\n")
+
+ln()
+
+#print (data.iloc[0])
+#print (data["DATE"])
+
+# filter selected columns 
+#data_f1 = data.filter(items=["DATE", "SYMBOL", "QUANTITY", "PRICE", ])
+
