@@ -1,0 +1,79 @@
+=== 25-01-24 Prompt chat for Dividend_Tracker ===
+
+python green bar graph of monthly dividends in dark grey window
+input data is time series where first column is date and second column is dividend value
+create example data pandas dataframe and use it for the program example
+
+Key features:
+
+    Green bars representing monthly dividends
+    Dark grey window background
+    Responsive design
+    Tooltip for precise dividend values
+    Sample data included
+
+Would you like modifications to the graph?
+J
+
+can the container be Windows  window?
+
+Updates:
+
+    Windows-style title bar
+    Minimize/maximize/close buttons
+    Grey border and background
+    Simulated window appearance
+
+J
+
+i want real windows application using for example tkinter
+
+Key features:
+
+    Tkinter desktop application
+    Displays dividend data in table
+    Green bar graph of monthly dividends
+    Uses pandas for data management
+    Matplotlib for visualization
+
+Prerequisites:
+
+    Install dependencies: pip install pandas matplotlib
+
+J
+
+in this app, how to define background color of graph, table and window itself
+
+Key color modifications:
+
+    Window: Dark blue-grey background
+    Table: Darker blue with white text
+    Graph: Dark theme with bright green bars
+    Text and axes in white
+
+J
+
+speratate app into 2 tabs. One containing table and second containing graph
+
+Changes:
+
+    Added notebook with two tabs
+    Separate frames for table and graph
+    Tabs: 'Table' and 'Graph'
+    Maintained previous color scheme
+
+J
+
+3 tabs, each containg table and graph, first tab is for dividends in #, second in EUR and 3rd in CZK
+
+Key features:
+
+    3 tabs: USD, EUR, CZK
+    Each tab has table and graph
+    Different color for each currency
+    Conversion rates included
+    Consistent dark theme styling
+
+Claude can make mistakes. Please double-check responses.
+
+
